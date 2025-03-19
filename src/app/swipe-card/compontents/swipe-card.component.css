@@ -1,0 +1,111 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Arial', sans-serif;
+  background-color: #F5F5F5;
+}
+
+header {
+  width: 100%;
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+}
+
+.pet-card {
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.pet-image {
+  width:100%;
+  height: 100%; /* Ustalamy wysokość zdjęcia */
+  border-radius: 12px;  /* Zaokrąglenie zdjęcia */
+}
+
+.pet-info {
+  margin-top: 15px;
+}
+
+.name-age {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pet-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.pet-breed, .pet-gender-weight, .pet-location {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+
+  font-size: 16px;
+  color: #6A6A6A;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center; /* Przyciski wyśrodkowane */
+  margin-top: 20px;
+}
+
+.accept-btn, .reject-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  font-size: 36px; /* Większy rozmiar przycisków */
+}
+
+.mat-icon {
+  margin-right: 10px;
+  font-size: 20px;
+  color: #6A6A6A;
+}
+
+.breed-icon {
+  color: #FFEB3B; /* Kolor ikony dla rasy (żółty) */
+}
+
+.gender-weight-icon {
+  color: #9607E8; /* Kolor ikony dla płci i wagi (zielony) */
+}
+
+.location-icon {
+  color: #4CAF50; /* Kolor ikony dla lokalizacji (zielony) */
+}
+
+.accept-btn:hover, .reject-btn:hover {
+  transform: scale(1.2);
+}
+
+.accept-btn mat-icon {
+  color: #A5D6A7; /* Pastelowy zielony */
+}
+
+.reject-btn mat-icon {
+  color: #FFEB3B; /* Złota żółć */
+}

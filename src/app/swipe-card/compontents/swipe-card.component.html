@@ -1,0 +1,50 @@
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<header>
+  <div class="logo">Adopsiak</div>
+</header>
+
+<div class="card-container" *ngIf="currentAnimal">
+  <mat-card class="pet-card">
+  <img [src]="currentAnimal.imageUrl" alt="Zdjęcie zwierzęcia" class="pet-image">
+
+    <div class="pet-info">
+
+      <div class="name-age">
+        <h2 class="pet-name">{{ currentAnimal.name }}, {{ currentAnimal.age }}</h2>
+      </div>
+
+      <div class="pet-breed">
+        <mat-icon class="breed-icon">pets</mat-icon>
+        <p class="pet-breed-text">{{ currentAnimal.breed }}</p>
+      </div>
+
+      <div class="pet-gender-weight">
+        <mat-icon class="gender-weight-icon">sell</mat-icon>
+        <p class="pet-gender">{{ currentAnimal.gender }}, {{ currentAnimal.weight }} kg</p>
+      </div>
+
+      <div class="pet-location">
+        <mat-icon class="location-icon">location_on</mat-icon>
+        <p class="pet-location-text">{{ currentAnimal.location }}</p>
+      </div>
+    </div>
+
+
+  <div class="action-buttons">
+
+    <button mat-icon-button class="reject-btn" (click)="swipeAnimal(false)">
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <button mat-icon-button class="accept-btn" (click)="swipeAnimal(true)">
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </div>
+
+</mat-card>
+</div>
+
+<p *ngIf="!currentAnimal">Brak zwierząt do wyświetlenia.</p>
