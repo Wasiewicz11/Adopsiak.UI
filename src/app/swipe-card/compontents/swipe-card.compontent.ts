@@ -8,7 +8,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {window} from 'rxjs';
 
 @Component({
   selector: 'app-swipe-card',
@@ -18,11 +17,12 @@ import {window} from 'rxjs';
     MatCardModule,
     MatToolbarModule],
   templateUrl: 'swipe-card.component.html',
-  styleUrls: ['swipe-card.component.css']
+  styleUrls: ['swipe-card.component.css'],
 })
 export class SwipeCardComponent implements OnInit {
   animals: any[] = [];
   currentAnimal: Animal | null = null;
+  animationState = 'visible';
 
   constructor(private animalService: AnimalService) {}
 
@@ -44,6 +44,7 @@ export class SwipeCardComponent implements OnInit {
 
     if (liked){
       console.log(this.currentAnimal.petDetailsUrl);
+      window.open(this.currentAnimal.petDetailsUrl, '_blank')
     }
     console.log(liked ? 'Polubiono' : 'Pominięto', this.currentAnimal.name);
 
